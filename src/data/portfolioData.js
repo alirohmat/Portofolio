@@ -14,19 +14,30 @@ const portfolioData = {
 
   operationalLogs: [
     {
-      id: "sppg-mendenrejo",
-      role: "Staff Dapur",
-      org: "SPPG Mendenrejo 005",
-      period: "Jun 2026 - Aug 2026",
+      id: "log-0",
+      role: "Tukang Kebun",
+      org: "MA Islamiyah Senori",
+      period: "Jul 2014 - Sep 2015",
       type: "OPERATIONAL_LOG",
-      status: "ARCHIVED",
-      focus: "Zero incident food safety, sanitasi, distribusi MBG",
+      focus: "Disiplin lapangan & etos kerja bottom-up",
       details:
-        "Menjaga standar food safety tanpa insiden, mengelola sanitasi dapur sesuai SOP, dan memastikan distribusi Makanan Bergizi Gratis (MBG) tepat waktu & tepat sasaran. Ketelitian operasional level dapur membentuk disiplin sistem yang kini dibawa ke deployment IT.",
-      tags: ["Food Safety", "Sanitasi", "Distribusi MBG", "SOP Compliance"],
+        "Merawat kebun sekolah saat masih siswa MA Islamiyah Senori — fondasi ketelitian, konsistensi, dan tanggung jawab operasional sejak dini.",
+      tags: ["Disiplin", "Etos Kerja", "Operasional Lapangan"],
     },
     {
-      id: "admin-mi",
+      id: "log-1",
+      role: "Pelayan Toko",
+      org: "Toko Sarem Mas",
+      period: "Mar 2017 - Feb 2021",
+      type: "OPERATIONAL_LOG",
+      status: "ARCHIVED",
+      focus: "Transaksi, stok, customer service",
+      details:
+        "Menangani transaksi harian, manajemen stok barang, dan pelayanan pelanggan langsung. Mengasah kecepatan, ketelitian kasir, dan empati customer service — soft skill yang krusial saat implementasi sistem ke pengguna akhir.",
+      tags: ["Transaksi", "Stok", "Customer Service", "Retail Ops"],
+    },
+    {
+      id: "log-2",
       role: "Admin",
       org: "MI Islamiyah Banin",
       period: "Nov 2021 - Jul 2023",
@@ -38,16 +49,16 @@ const portfolioData = {
       tags: ["Data Kesiswaan", "Arsip", "Keuangan", "Administrasi"],
     },
     {
-      id: "sarem-mas",
-      role: "Pelayan Toko",
-      org: "Toko Sarem Mas",
-      period: "Mar 2017 - Feb 2021",
+      id: "log-3",
+      role: "Staff Dapur",
+      org: "SPPG Mendenrejo 005",
+      period: "Jun 2026 - Aug 2026",
       type: "OPERATIONAL_LOG",
       status: "ARCHIVED",
-      focus: "Transaksi, stok, customer service",
+      focus: "Zero incident food safety, sanitasi, distribusi MBG",
       details:
-        "Menangani transaksi harian, manajemen stok barang, dan pelayanan pelanggan langsung. Mengasah kecepatan, ketelitian kasir, dan empati customer service — soft skill yang krusial saat implementasi sistem ke pengguna akhir.",
-      tags: ["Transaksi", "Stok", "Customer Service", "Retail Ops"],
+        "Menjaga standar food safety tanpa insiden, mengelola sanitasi dapur sesuai SOP, dan memastikan distribusi Makanan Bergizi Gratis (MBG) tepat waktu & tepat sasaran. Ketelitian operasional level dapur membentuk disiplin sistem yang kini dibawa ke deployment IT.",
+      tags: ["Food Safety", "Sanitasi", "Distribusi MBG", "SOP Compliance"],
     },
   ],
 
