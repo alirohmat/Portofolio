@@ -73,16 +73,16 @@ export default function Hero() {
           })}
         </div>
 
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full max-w-sm sm:max-w-none mx-auto">
           <a
             href="#systems"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 shadow-md shadow-accent/20 hover:shadow-accent/30 transition-all duration-300 font-mono text-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 shadow-md shadow-accent/20 hover:shadow-accent/30 transition-all duration-300 font-mono text-sm"
           >
             View Deployed Systems
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-surface/50 text-slate-900 dark:text-text px-6 py-3 rounded-xl hover:border-accent/60 hover:text-accent transition-all duration-300 font-mono text-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-surface/50 text-slate-900 dark:text-text px-6 py-3 rounded-xl hover:border-accent/60 hover:text-accent transition-all duration-300 font-mono text-sm"
           >
             Initialize Contact
           </a>
