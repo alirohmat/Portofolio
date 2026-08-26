@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import portfolioData from '../../data/portfolioData';
 import { Phone, Mail, MapPin, Download, MessageSquare, Copy, Check } from 'lucide-react';
 
