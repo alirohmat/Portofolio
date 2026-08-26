@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import OperationalLogs from './components/sections/OperationalLogs';
 import DeployedSystems from './components/sections/DeployedSystems';
+import BackgroundSection from './components/sections/BackgroundSection';
 import TechStack from './components/sections/TechStack';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
@@ -32,6 +33,14 @@ function App() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <DeployedSystems />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <BackgroundSection />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}

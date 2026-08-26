@@ -7,8 +7,8 @@ export default function TerminalText({ text, speed = 40, cursor = true, classNam
 
   useEffect(() => {
     if (index >= text.length) {
-      setIsDone(true);
-      return undefined;
+      const timer = setTimeout(() => setIsDone(true), 0);
+      return () => clearTimeout(timer);
     }
 
     const timer = setInterval(() => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function BackgroundGrid() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white dark:bg-primary pointer-events-none transition-colors duration-300">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-white dark:bg-primary pointer-events-none transition-colors duration-300">
       <div
         className="absolute inset-0"
         style={{

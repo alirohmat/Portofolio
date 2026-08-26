@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import StatusBadge from '../ui/StatusBadge';
 import portfolioData from '../../data/portfolioData';
-import { Rocket, ExternalLink, Server } from 'lucide-react';
+import { Rocket, ExternalLink } from 'lucide-react';
 
 export default function DeployedSystems() {
   return (
