@@ -36,13 +36,13 @@ export default function Navbar() {
           <span className="hidden text-xs text-muted sm:inline">System Implementer</span>
         </a>
 
-        <div className="flex items-center gap-2 md:gap-8">
-          <div className="hidden items-center gap-8 md:flex">
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-slate-700 transition-colors hover:text-accent dark:text-text"
+                className="text-sm font-medium text-slate-700 transition-colors hover:text-accent dark:text-slate-300 dark:hover:text-white"
               >
                 {link.label}
               </a>
@@ -53,9 +53,9 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="rounded-lg border border-slate-300 bg-white p-2 text-text transition hover:border-accent/50 dark:border-slate-700 dark:bg-transparent dark:text-text"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition-all hover:border-accent hover:shadow-sm dark:border-slate-800 dark:bg-slate-900"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
           <button
