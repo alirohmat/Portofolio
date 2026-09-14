@@ -1,47 +1,66 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ClipboardList, Terminal, History } from 'lucide-react';
+import { Building2, CalendarDays } from 'lucide-react';
 import { operationalLogs } from '../../data/portfolioData';
 import Card from '../ui/Card';
-
-const logIcons = {
-  'OPERATIONAL_LOG': ClipboardList,
-  'TECH_LOG': Terminal,
-  'HISTORY_LOG': History,
-};
+import SectionHeading from '../ui/SectionHeading';
 
 export default function OperationalLogs() {
   return (
-    <section id="logs" className="py-20">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Pengalaman Profesional</h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">Ringkasan peran operasional dan implementasi teknis saya, menunjukkan pertumbuhan konsisten dan perhatian tinggi terhadap detail.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {operationalLogs.map((log, index) => {
-            const Icon = logIcons[log.type] || ClipboardList;
-            return (
+    <section id="logs" className="scroll-mt-20 py-20 sm:py-24">
+      <div className="container-shell">
+        <SectionHeading
+          index="01"
+          eyebrow="operational.logs"
+          title="Pengalaman Profesional"
+          desc="Jejak peran operasional dan implementasi teknis. Disiplin lapangan diterjemahkan jadi keandalan sistem."
+        />
+
+        <div className="relative mt-12">
+          <div className="absolute bottom-4 left-[19px] top-2 hidden w-px bg-[var(--border-color)] md:block" />
+          <div className="flex flex-col gap-5">
+            {operationalLogs.map((log, index) => (
               <motion.div
                 key={log.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.06 }}
+                className="relative md:pl-14"
               >
-                <Card className="h-full">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Icon size={16} className="text-accent shrink-0" />
-                    <span className="font-medium text-slate-900 dark:text-text text-sm">{log.role}</span>
-                    <span className="bg-slate-100 dark:bg-primary border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-muted text-xs px-2 py-0.5 rounded transition-colors duration-300">
-                      {log.org} • {log.period}
+                <span className="absolute left-[11px] top-7 hidden h-[18px] w-[18px] rounded-full border-2 border-lime bg-[var(--bg-primary)] shadow-glow md:block">
+                  <span className="absolute inset-[3px] rounded-full bg-lime" />
+                </span>
+                <Card className="group relative overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 w-1 bg-lime opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-md bg-lime px-2 py-1 font-mono text-[11px] font-bold text-lime-ink">
+                      {String(index + 1).padStart(2, '0')}
                     </span>
+                    <h3 className="font-display text-lg font-bold tracking-tight">{log.role}</h3>
+                    {log.status && (
+                      <span className="rounded-full border border-[var(--border-color)] px-2 py-0.5 font-mono text-[10px] tracking-widest opacity-60">
+                        {log.status}
+                      </span>
+                    )}
                   </div>
-                  <p className="mt-2 text-accent-dark dark:text-accent-light text-xs font-semibold tracking-wide">FOCUS: {log.focus}</p>
-                  <p className="mt-2 text-slate-600 dark:text-muted text-sm transition-colors duration-300">{log.details}</p>
+                  <p className="mono-label mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 opacity-70">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Building2 size={13} /> {log.org}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <CalendarDays size={13} /> {log.period}
+                    </span>
+                  </p>
+                  <p className="mt-2 font-mono text-[11px] font-bold tracking-[0.18em] text-lime-dim dark:text-lime">
+                    FOCUS: {log.focus.toUpperCase()}
+                  </p>
+                  <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">{log.details}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {log.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-accent/30 bg-accent/10 text-accent-dark dark:text-accent-light text-xs px-2 py-0.5 rounded-full font-medium"
+                        className="rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium transition-colors hover:border-lime/50"
                       >
                         {tag}
                       </span>
@@ -49,8 +68,8 @@ export default function OperationalLogs() {
                   </div>
                 </Card>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

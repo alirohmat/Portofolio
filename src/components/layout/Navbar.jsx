@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, Moon, Sun, X, Terminal } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import useTheme from '../../hooks/useTheme';
 
@@ -16,51 +16,64 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Logs', href: '#logs' },
-    { label: 'Systems', href: '#systems' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Logs', href: '#logs', index: '01' },
+    { label: 'Systems', href: '#systems', index: '02' },
+    { label: 'Skills', href: '#skills', index: '03' },
+    { label: 'Contact', href: '#contact', index: '04' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-primary/80 ${
-        scrolled ? 'shadow-lg shadow-black/20' : ''
+      className={`fixed top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-300 ${
+        scrolled
+          ? 'border-[var(--border-color)] bg-[var(--bg-primary)]/85 shadow-card'
+          : 'border-transparent bg-[var(--bg-primary)]/60'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-semibold tracking-tight text-slate-900 dark:text-white text-base">
-            ALI ROHMATULLOH
+      <div className="container-shell flex h-16 items-center justify-between">
+        <a href="#top" className="group flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime font-mono text-sm font-bold text-lime-ink shadow-glow">
+            <Terminal size={16} strokeWidth={2.5} />
           </span>
-          <span className="hidden text-xs text-slate-500 dark:text-muted sm:inline font-normal">System Implementer & Ops Specialist</span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-[15px] font-bold tracking-tight">ALI ROHMATULLOH</span>
+            <span className="mono-label mt-1 hidden text-[10px] opacity-60 sm:inline">sys.impl // ops.spec</span>
+          </span>
         </a>
 
-        <div className="flex items-center gap-2 md:gap-4">
-          <div className="hidden items-center gap-6 md:flex">
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                className="group rounded-lg px-3 py-2 font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)]"
               >
+                <span className="mr-1 text-[10px] text-lime-dim dark:text-lime">{link.index}</span>
                 {link.label}
               </a>
             ))}
           </div>
 
+          <a
+            href="#contact"
+            className="mr-1 hidden rounded-full bg-lime px-4 py-2 text-[13px] font-bold text-lime-ink transition-transform hover:scale-[1.03] active:scale-95 md:inline-flex"
+          >
+            Hire Me
+          </a>
+
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition-all hover:border-blue-500 hover:shadow-sm dark:border-slate-700 dark:bg-slate-800"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-color)] bg-[var(--bg-surface)] transition-all hover:border-lime/60"
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-slate-900 transition-colors hover:text-accent dark:text-text md:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-lime-dim md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
@@ -78,19 +91,27 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="absolute top-16 left-0 w-full border-b border-slate-200 bg-white/95 backdrop-blur-lg dark:border-slate-800 dark:bg-surface/95 shadow-xl md:hidden"
+            className="absolute left-0 top-16 w-full border-b border-[var(--border-color)] bg-[var(--bg-primary)]/95 shadow-card backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col gap-2 px-6 py-5">
+            <div className="flex flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-800 transition-colors hover:bg-accent/10 hover:text-accent dark:text-text dark:hover:bg-accent/15"
+                  className="rounded-xl px-4 py-3 font-mono text-[15px] transition-colors hover:bg-[var(--accent-soft)]"
                 >
+                  <span className="mr-2 text-xs text-lime-dim dark:text-lime">{link.index}</span>
                   {link.label}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 rounded-xl bg-lime px-4 py-3 text-center font-bold text-lime-ink"
+              >
+                Hire Me
+              </a>
             </div>
           </motion.div>
         )}

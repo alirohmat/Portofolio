@@ -1,68 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from '../ui/Card';
-import StatusBadge from '../ui/StatusBadge';
+import { ArrowUpRight, CheckCircle2, Rocket } from 'lucide-react';
 import { deployedSystems } from '../../data/portfolioData';
-import { Rocket, ExternalLink } from 'lucide-react';
+import StatusBadge from '../ui/StatusBadge';
+import SectionHeading from '../ui/SectionHeading';
 
 export default function DeployedSystems() {
   return (
-    <section id="systems" className="py-20">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Proyek & Implementasi</h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">Kumpulan sistem yang berhasil saya implementasikan dan jalankan di lingkungan produksi.</p>
+    <section id="systems" className="scroll-mt-20 py-20 sm:py-24">
+      <div className="container-shell">
+        <SectionHeading
+          index="02"
+          eyebrow="deployed.systems"
+          title="Proyek & Implementasi"
+          desc="Sistem yang sudah live di production. Bukan mockup, bukan demo lokal."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
           {deployedSystems.map((item, index) => (
-            <motion.div
+            <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              className="card-line group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:hover:border-lime/40 sm:p-7"
             >
-              <Card className="h-full hover:border-blue-300 hover:shadow-md transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <StatusBadge status={item.status} />
-                    <h3 className="font-bold mt-2 text-slate-900 dark:text-text transition-colors duration-300">{item.name}</h3>
-                    <p className="text-xs text-slate-500 dark:text-muted">{item.role}</p>
-                  </div>
-                  <Rocket size={20} className="text-accent shrink-0" />
-                </div>
+              <div
+                className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{ background: 'radial-gradient(closest-side, rgba(200,240,75,0.18), transparent)' }}
+              />
+              <div className="flex items-start justify-between gap-3">
+                <StatusBadge status={item.status} />
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-color)] text-lime-dim transition-colors group-hover:border-lime/50 dark:text-lime">
+                  <Rocket size={18} />
+                </span>
+              </div>
 
-                {item.url ? (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-sm text-accent hover:text-accent-dark underline inline-flex items-center gap-1 transition-colors duration-300"
-                  >
-                    {item.displayUrl} <ExternalLink size={12} />
-                  </a>
-                ) : (
-                  <span className="text-slate-500 dark:text-muted text-sm">{item.displayUrl}</span>
-                )}
+              <h3 className="mt-4 font-display text-2xl font-bold tracking-tight">{item.name}</h3>
+              <p className="mono-label mt-1 opacity-60">{item.role}</p>
 
-                <p className="text-slate-600 dark:text-muted text-sm mt-3 transition-colors duration-300">{item.details}</p>
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[13px] font-bold text-lime-dim transition-transform hover:scale-[1.02] dark:text-lime"
+                >
+                  {item.displayUrl} <ArrowUpRight size={14} />
+                </a>
+              ) : (
+                <span className="mt-3 w-fit rounded-lg border border-[var(--border-color)] px-3 py-1.5 font-mono text-[13px] opacity-70">
+                  {item.displayUrl}
+                </span>
+              )}
 
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {item.stack.map((tech) => (
-                    <span key={tech} className="border border-slate-200 dark:border-slate-700 text-xs px-2 py-0.5 rounded-full text-slate-600 dark:text-muted transition-colors duration-300">
-                      {tech}
-                    </span>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{item.details}</p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {item.stack.map((tech) => (
+                  <span key={tech} className="rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)] px-3 py-1 text-xs font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {item.highlights && (
+                <ul className="mt-4 space-y-2 border-t border-[var(--border-color)] pt-4">
+                  {item.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[13px] text-[var(--text-muted)]">
+                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-lime-dim dark:text-lime" />
+                      {h}
+                    </li>
                   ))}
-                </div>
-
-                {item.highlights && (
-                  <ul className="list-disc pl-5 mt-3 text-xs text-slate-600 dark:text-muted transition-colors duration-300">
-                    {item.highlights.map((highlight, i) => (
-                      <li key={i}>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-              </Card>
-            </motion.div>
+                </ul>
+              )}
+            </motion.article>
           ))}
         </div>
       </div>
