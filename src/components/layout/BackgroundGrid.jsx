@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function BackgroundGrid() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white dark:bg-primary pointer-events-none transition-colors duration-300">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-white dark:bg-primary pointer-events-none transition-colors duration-300">
       <div
         className="absolute inset-0"
         style={{
@@ -20,7 +20,7 @@ export default function BackgroundGrid() {
       <div
         className="absolute inset-0 flex items-center justify-center"
         style={{
-          background: "radial-gradient(circle at center, rgba(16,185,129,0.06), transparent 70%)",
+          background: "radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08), transparent 70%)",
         }}
       />
     </div>

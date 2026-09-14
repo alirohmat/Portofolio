@@ -31,7 +31,7 @@
   }
 
   body {
-    @apply antialiased font-mono;
+    @apply antialiased font-sans;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color 300ms ease-in-out, color 300ms ease-in-out;

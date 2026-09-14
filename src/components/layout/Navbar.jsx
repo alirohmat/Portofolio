@@ -30,10 +30,10 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex flex-col leading-none">
-          <span className="font-mono font-bold tracking-tight text-slate-900 dark:text-text">
+          <span className="font-semibold tracking-tight text-slate-900 dark:text-white text-base">
             ALI ROHMATULLOH
           </span>
-          <span className="hidden text-xs text-muted sm:inline">System Implementer</span>
+          <span className="hidden text-xs text-slate-500 dark:text-muted sm:inline font-normal">System Implementer & Ops Specialist</span>
         </a>
 
         <div className="flex items-center gap-2 md:gap-4">
@@ -42,7 +42,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-700 transition-colors hover:text-accent dark:text-slate-300 dark:hover:text-white"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
               >
                 {link.label}
               </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition-all hover:border-accent hover:shadow-sm dark:border-slate-800 dark:bg-slate-900"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition-all hover:border-blue-500 hover:shadow-sm dark:border-slate-700 dark:bg-slate-800"
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>

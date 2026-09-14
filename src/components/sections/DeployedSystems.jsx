@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import StatusBadge from '../ui/StatusBadge';
 import { deployedSystems } from '../../data/portfolioData';
-import { Rocket, ExternalLink, Server } from 'lucide-react';
+import { Rocket, ExternalLink } from 'lucide-react';
 
 export default function DeployedSystems() {
   return (
     <section id="systems" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="font-mono text-accent text-2xl mb-2">{"< Deployed_Systems />"}</h2>
-        <p className="text-slate-600 dark:text-muted mb-8 transition-colors duration-300">Active Nodes — sistem yang sudah live & deployed ke production</p>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Projects & Deployments</h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">A showcase of systems I have successfully implemented and deployed into production environments.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {deployedSystems.map((item, index) => (
@@ -21,7 +21,7 @@ export default function DeployedSystems() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
             >
-              <Card className="h-full hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
+              <Card className="h-full hover:border-blue-300 hover:shadow-md transition-all duration-300">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <StatusBadge status={item.status} />
@@ -36,7 +36,7 @@ export default function DeployedSystems() {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-sm text-accent hover:text-emerald-600 dark:hover:text-accent underline inline-flex items-center gap-1 transition-colors duration-300"
+                    className="font-mono text-sm text-accent hover:text-accent-dark underline inline-flex items-center gap-1 transition-colors duration-300"
                   >
                     {item.displayUrl} <ExternalLink size={12} />
                   </a>

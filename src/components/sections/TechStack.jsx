@@ -1,31 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { techSkills, softSkills } from '../../data/portfolioData';
-import { Cpu, Users } from 'lucide-react';
 
 export default function TechStack() {
   return (
     <section id="skills" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="font-mono text-accent text-2xl mb-2">{"< Tech_&_Soft_Modules />"}</h2>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Technical Skills & Expertise</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           {/* Hard Modules */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Cpu size={20} className="text-accent" />
-              <h3 className="font-mono text-lg text-slate-900 dark:text-text transition-colors duration-300">Hard Modules</h3>
-            </div>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Core Competencies</h3>
 
             {techSkills.map((skill) => (
-              <div key={skill.name} className="mb-4">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="font-mono text-sm text-slate-900 dark:text-text transition-colors duration-300">{skill.name}</span>
-                  <span className="text-xs text-slate-500 dark:text-muted">{skill.level}%</span>
+              <div key={skill.name} className="mb-5">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{skill.name}</span>
+                  <span className="text-xs text-slate-500">{skill.level}%</span>
                 </div>
-                <div className="bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden transition-colors duration-300">
+                <div className="bg-slate-200 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
                   <motion.div
-                    className="bg-accent h-full"
+                    className="bg-blue-600 h-full rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
@@ -37,16 +33,13 @@ export default function TechStack() {
 
           {/* Soft Protocols */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Users size={20} className="text-accent" />
-              <h3 className="font-mono text-lg text-slate-900 dark:text-text transition-colors duration-300">Soft Protocols</h3>
-            </div>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Professional Soft Skills</h3>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {softSkills.map((skill) => (
                 <div
                   key={skill}
-                  className="border border-slate-200 dark:border-slate-700 bg-white dark:bg-transparent rounded-lg px-3 py-2 text-sm text-center font-mono text-slate-700 dark:text-text hover:border-accent transition-colors duration-300 cursor-default"
+                  className="bg-slate-50 dark:bg-slate-800 rounded-lg px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-center hover:border-blue-400 transition-colors"
                 >
                   {skill}
                 </div>
