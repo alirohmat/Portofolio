@@ -19,7 +19,7 @@ export default function Hero() {
           {profile.role}
         </p>
         <div className="mt-4 text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
-          {profile.bio ? `${profile.bio.slice(0, 147).split(' ').slice(0, -1).join(' ')}...` : ''}
+          {profile.bio}
         </div>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row justify-center">
           <a
