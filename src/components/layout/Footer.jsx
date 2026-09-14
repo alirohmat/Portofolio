@@ -8,7 +8,7 @@ export default function Footer() {
         <p className="text-sm text-slate-600 dark:text-muted font-mono">
           Copyright © 2026 ALI ROHMATULLOH — System Implementer
         </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:gap-6">
+        <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
           <a href="mailto:alirohmat@yahoo.com" className="flex items-center text-sm text-slate-600 dark:text-muted hover:text-accent transition-colors">
             <Mail size={16} className="mr-1" />
             alirohmat@yahoo.com
