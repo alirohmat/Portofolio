@@ -117,7 +117,14 @@ export const techSkills = [
   { name: "Data Admin", level: 88 },
 ];
 
-export const softSkills = ["Analytical", "Public Speaking", "Teamwork", "Customer Service"];
+export const softSkills = [
+  { name: "Ketelitian Data", desc: "Akurasi 100% digitalisasi arsip & keuangan", icon: "Target" },
+  { name: "Disiplin Operasional", desc: "Zero-incident sanitasi & distribusi harian", icon: "ShieldCheck" },
+  { name: "Komunikasi Publik", desc: "Presentasi & pendampingan operator sistem", icon: "Mic" },
+  { name: "Kerja Sama Tim", desc: "Kolaborasi dapur, retail, dan madrasah", icon: "Users" },
+  { name: "Pelayanan Pelanggan", desc: "50+ transaksi/hari kepuasan tinggi", icon: "Smile" },
+  { name: "Manajemen Waktu", desc: "Distribusi 100+ porsi tepat waktu", icon: "Clock" },
+];
 
 export const contact = {
   location: "Kab. Tuban, Jatim",

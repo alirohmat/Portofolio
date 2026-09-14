@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { techSkills, softSkills } from '../../data/portfolioData';
+import { Target, ShieldCheck, Mic, Users, Smile, Clock } from 'lucide-react';
+
+const iconMap = { Target, ShieldCheck, Mic, Users, Smile, Clock };
 
 export default function TechStack() {
   return (
@@ -35,15 +38,24 @@ export default function TechStack() {
           <div>
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Soft Skills Profesional</h3>
 
-            <div className="grid grid-cols-2 gap-4">
-              {softSkills.map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-slate-50 dark:bg-slate-800 rounded-lg px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-center hover:border-blue-400 transition-colors"
-                >
-                  {skill}
-                </div>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {softSkills.map((skill) => {
+                const Icon = iconMap[skill.icon] || Target;
+                return (
+                  <div
+                    key={skill.name}
+                    className="flex items-start gap-3 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700 hover:border-blue-400 hover:shadow-sm transition-all"
+                  >
+                    <div className="bg-blue-50 dark:bg-slate-700 p-2 rounded-lg text-blue-600 dark:text-blue-400 shrink-0">
+                      <Icon size={18} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">{skill.name}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{skill.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
