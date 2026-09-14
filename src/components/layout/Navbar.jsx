@@ -74,19 +74,19 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             key="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-surface md:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="absolute top-16 left-0 w-full border-b border-slate-200 bg-white/95 backdrop-blur-lg dark:border-slate-800 dark:bg-surface/95 shadow-xl md:hidden"
           >
-            <div className="flex flex-col gap-1 px-4 py-3">
+            <div className="flex flex-col gap-2 px-6 py-5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-md px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-accent dark:text-text dark:hover:bg-primary/40"
+                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-800 transition-colors hover:bg-accent/10 hover:text-accent dark:text-text dark:hover:bg-accent/15"
                 >
                   {link.label}
                 </a>
