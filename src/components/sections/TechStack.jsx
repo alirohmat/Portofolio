@@ -24,10 +24,12 @@ export default function TechStack() {
                   <span className="text-xs text-slate-500 dark:text-muted">{skill.level}%</span>
                 </div>
                 <div className="bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden transition-colors duration-300">
-                  <div
-                    className="bg-accent h-full transition-all duration-500"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
+                  <motion.div
+                    className="bg-accent h-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                  ></motion.div>
                 </div>
               </div>
             ))}
