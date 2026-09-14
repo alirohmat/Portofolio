@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import portfolioData from '../../data/portfolioData';
+import { techSkills, softSkills } from '../../data/portfolioData';
 import { Cpu, Users } from 'lucide-react';
 
 export default function TechStack() {
@@ -17,7 +17,7 @@ export default function TechStack() {
               <h3 className="font-mono text-lg text-slate-900 dark:text-text transition-colors duration-300">Hard Modules</h3>
             </div>
 
-            {portfolioData.techSkills.map((skill) => (
+            {techSkills.map((skill) => (
               <div key={skill.name} className="mb-4">
                 <div className="flex justify-between items-center mb-1">
                   <span className="font-mono text-sm text-slate-900 dark:text-text transition-colors duration-300">{skill.name}</span>
@@ -41,7 +41,7 @@ export default function TechStack() {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              {portfolioData.softSkills.map((skill) => (
+              {softSkills.map((skill) => (
                 <div
                   key={skill}
                   className="border border-slate-200 dark:border-slate-700 bg-white dark:bg-transparent rounded-lg px-3 py-2 text-sm text-center font-mono text-slate-700 dark:text-text hover:border-accent transition-colors duration-300 cursor-default"

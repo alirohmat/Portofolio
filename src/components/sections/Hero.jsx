@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import portfolioData from '../../data/portfolioData';
+import { profile } from '../../data/portfolioData';
 import TerminalText from '../ui/TerminalText';
 
 export default function Hero() {
@@ -14,13 +14,13 @@ export default function Hero() {
         className="w-full max-w-xl px-6 text-center"
       >
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          {portfolioData.profile.name}
+          {profile.name}
         </h1>
         <p className="mt-3 text-sm font-medium uppercase tracking-widest text-accent sm:text-base">
-          {portfolioData.profile.role}
+          {profile.role}
         </p>
         <div className="mt-6 font-mono text-xs text-slate-500 dark:text-slate-400">
-          <TerminalText text={portfolioData.profile.tagline} />
+          <TerminalText text={profile.tagline} />
         </div>
         <div className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-3">
           {["SYS: ONLINE", "UPTIME: 99.9%", "LAST DEPLOY: RDM"].map((m) => (

@@ -8,10 +8,11 @@ import DeployedSystems from './components/sections/DeployedSystems';
 import TechStack from './components/sections/TechStack';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 
 function App() {
   return (
-    <>
+    <ErrorBoundary>
       <BackgroundGrid />
       <Navbar />
       <main className="relative min-h-screen">
@@ -52,7 +53,7 @@ function App() {
         </div>
       </main>
       <Footer />
-    </>
+    </ErrorBoundary>
   );
 }
 

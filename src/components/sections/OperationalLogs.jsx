@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ClipboardList, Terminal, History } from 'lucide-react';
-import portfolioData from '../../data/portfolioData';
+import { operationalLogs } from '../../data/portfolioData';
 import Card from '../ui/Card';
 
 const logIcons = {
@@ -17,7 +17,7 @@ export default function OperationalLogs() {
         <h2 className="font-mono text-accent text-2xl mb-2">{"< Operational_Logs />"}</h2>
         <p className="text-slate-600 dark:text-muted mb-8 transition-colors duration-300">Fondasi ketelitian dari operasional lapangan hingga deployment sistem</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioData.operationalLogs.map((log, index) => {
+          {operationalLogs.map((log, index) => {
             const Icon = logIcons[log.type] || ClipboardList;
             return (
               <motion.div

@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import portfolioData from '../../data/portfolioData';
+import { contact } from '../../data/portfolioData';
 import { Phone, Mail, MapPin, Download } from 'lucide-react';
 
 export default function Contact() {
-  const { contact } = portfolioData;
 
   return (
     <section id="contact" className="py-20">
@@ -38,8 +37,12 @@ export default function Contact() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-accent text-white dark:text-primary font-bold px-6 py-3 rounded-lg hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors duration-300"
+                href="#download-cv"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("CV download link will be available soon.");
+                }}
+                className="inline-flex items-center gap-2 bg-accent text-white dark:text-primary font-bold px-6 py-3 rounded-lg hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors duration-300 cursor-pointer"
               >
                 <Download size={16} />
                 Download CV

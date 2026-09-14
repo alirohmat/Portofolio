@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import StatusBadge from '../ui/StatusBadge';
-import portfolioData from '../../data/portfolioData';
+import { deployedSystems } from '../../data/portfolioData';
 import { Rocket, ExternalLink, Server } from 'lucide-react';
 
 export default function DeployedSystems() {
@@ -13,7 +13,7 @@ export default function DeployedSystems() {
         <p className="text-slate-600 dark:text-muted mb-8 transition-colors duration-300">Active Nodes — sistem yang sudah live & deployed ke production</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {portfolioData.deployedSystems.map((item, index) => (
+          {deployedSystems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
