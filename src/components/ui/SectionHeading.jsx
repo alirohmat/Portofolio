@@ -4,7 +4,7 @@ export default function SectionHeading({ index, eyebrow, title, desc, align = 'l
   const alignCls = align === 'center' ? 'text-center mx-auto items-center' : 'text-left items-start';
   return (
     <div className={`flex max-w-2xl flex-col ${alignCls}`}>
-      <p className="mono-label flex items-center gap-2 text-lime-dim dark:text-lime">
+      <p className="mono-label flex items-center gap-2 text-lime-deep dark:text-lime">
         <span className="inline-block h-px w-8 bg-current opacity-60" />
         {index} // {eyebrow}
       </p>

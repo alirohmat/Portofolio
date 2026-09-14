@@ -32,7 +32,7 @@ export default function DeployedSystems() {
               />
               <div className="flex items-start justify-between gap-3">
                 <StatusBadge status={item.status} />
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-color)] text-lime-dim transition-colors group-hover:border-lime/50 dark:text-lime">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border-color)] text-lime-deep transition-colors group-hover:border-lime/50 dark:text-lime">
                   <Rocket size={18} />
                 </span>
               </div>
@@ -45,7 +45,7 @@ export default function DeployedSystems() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[13px] font-bold text-lime-dim transition-transform hover:scale-[1.02] dark:text-lime"
+                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[13px] font-bold text-lime-deep transition-transform hover:scale-[1.02] dark:text-lime"
                 >
                   {item.displayUrl} <ArrowUpRight size={14} />
                 </a>
@@ -69,7 +69,7 @@ export default function DeployedSystems() {
                 <ul className="mt-4 space-y-2 border-t border-[var(--border-color)] pt-4">
                   {item.highlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2 text-[13px] text-[var(--text-muted)]">
-                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-lime-dim dark:text-lime" />
+                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-lime-deep dark:text-lime" />
                       {h}
                     </li>
                   ))}

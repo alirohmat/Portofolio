@@ -20,7 +20,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden pb-10 pt-28">
+    <section className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden pb-10 pt-28">
       <div className="container-shell relative">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -40,8 +40,8 @@ export default function Hero() {
         >
           ALI
           <br />
-          ROHMAT<span className="text-lime-dim dark:text-lime">ULLOH</span>
-          <span className="animate-blink text-lime-dim dark:text-lime">_</span>
+          ROHMAT<span className="text-lime-deep dark:text-lime">ULLOH</span>
+          <span className="animate-blink text-lime-deep dark:text-lime">_</span>
         </motion.h1>
 
         <motion.div
@@ -51,7 +51,7 @@ export default function Hero() {
           className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"
         >
           <div>
-            <p className="mono-label text-lime-dim dark:text-lime">{profile.role}</p>
+            <p className="mono-label text-lime-deep dark:text-lime">{profile.role}</p>
             <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[var(--text-muted)] sm:text-base">
               {profile.bio}
             </p>
@@ -77,7 +77,7 @@ export default function Hero() {
           <div className="grid grid-cols-3 gap-3">
             {stats.map((s) => (
               <div key={s.label} className="card-line rounded-2xl p-4 text-center backdrop-blur">
-                <s.icon size={18} className="mx-auto text-lime-dim dark:text-lime" />
+                <s.icon size={18} className="mx-auto text-lime-deep dark:text-lime" />
                 <p className="mt-2 font-display text-2xl font-bold">{s.value}</p>
                 <p className="mt-1 text-[11px] leading-tight text-[var(--text-muted)]">{s.label}</p>
               </div>
@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="flex w-max animate-marquee gap-8 pr-8">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span key={i} className="flex items-center gap-8 whitespace-nowrap font-mono text-[12px] tracking-[0.2em]">
-              {item} <span className="text-lime-dim dark:text-lime">●</span>
+              {item} <span className="text-lime-deep dark:text-lime">●</span>
             </span>
           ))}
         </div>

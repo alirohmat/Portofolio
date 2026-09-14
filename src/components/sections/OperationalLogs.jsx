@@ -52,7 +52,7 @@ export default function OperationalLogs() {
                       <CalendarDays size={13} /> {log.period}
                     </span>
                   </p>
-                  <p className="mt-2 font-mono text-[11px] font-bold tracking-[0.18em] text-lime-dim dark:text-lime">
+                  <p className="mt-2 font-mono text-[11px] font-bold tracking-[0.18em] text-lime-deep dark:text-lime">
                     FOCUS: {log.focus.toUpperCase()}
                   </p>
                   <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)]">{log.details}</p>

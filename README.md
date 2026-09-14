@@ -1,21 +1,21 @@
 # Portofolio — ALI ROHMATULLOH
 
-**System Implementer & Operational Specialist** — Operations & Deployment Dashboard
+**System Implementer & Operational Specialist** — Ops-console theme, lime accent.
 
-Portofolio pribadi ALI ROHMATULLOH (Kab. Tuban, Jatim) — merepresentasikan perjalanan dari operasional lapangan (admin, logistik dapur/MBG, retail) hingga deployment sistem digital.
+Portofolio pribadi ALI ROHMATULLOH (Kab. Tuban, Jatim) — dari operasional lapangan (admin, logistik dapur/MBG, retail) hingga deployment sistem digital.
 
 ## ✨ Features
 
-- **Operations & Deployment Dashboard** theme — bukan portofolio kaku, tapi interaktif & sistemik
-- **Dark/Light Mode** — toggle Sun/Moon di Navbar, persist via `localStorage`, ikut `prefers-color-scheme`, smooth `300ms`
+- **Ops-console redesign** — dark default, lime glow, Space Grotesk display + JetBrains Mono labels
+- **Dark/Light Mode** — toggle Sun/Moon di Navbar, persist via `localStorage`, default `dark`
 - **Sections:**
-  - `Hero` — System Status + `TerminalText` typing `Status: Ready for Deployment...` + metrics `[SYS: ONLINE] [UPTIME: 99.9%] [LAST DEPLOY: RDM MODULE]`
-  - `Operational Logs` — timeline cards (SPPG Mendenrejo 005, MI Islamiyah Banin, Toko Sarem Mas)
-  - `Deployed Systems` — Active Nodes (Portal IGRA Senori `igra-senori.web.id` **LIVE** + RDM) dengan `StatusBadge` pulse & hover scale
-  - `Tech & Soft Modules` — Hard Modules (progress bar) + Soft Protocols (badges)
-  - `Contact` — Phone/Mail/MapPin + Download CV + WhatsApp
+  - `Hero` — status pill `Ready for Deployment`, display type besar, stat cards (0 incident / 100% arsip / 2 system), marquee stack
+  - `OperationalLogs` — vertical timeline 4 peran + nomor urut + tag
+  - `DeployedSystems` — 2 kartu (Portal IGRA Senori `LIVE` + RDM `DEPLOYED`), stack chips, highlights checklist
+  - `TechStack` — `core_competency.sh` progress bars + `soft_protocols[]` grid + education & organization cards
+  - `Contact` — phone/email/base rows + copy button + WhatsApp & Email CTA
 - **Tech Stack:** Vite + React (JSX) + Tailwind CSS + Framer Motion + Lucide React
-- **Responsive** + WCAG contrast + SEO meta
+- **Responsive** + SEO meta + JSON-LD Person
 
 ## 🚀 Quick Start
 
@@ -28,25 +28,27 @@ npm run preview
 
 ## 🌗 Dark/Light Mode
 
-- Hook: `src/hooks/useTheme.js` — `useState` + `useEffect` (apply `html.dark` + `localStorage` + `matchMedia` listener)
+- Hook: `src/hooks/useTheme.js` — `useState` + `useEffect` (apply `html.dark` + `localStorage`), default `dark`
 - Tailwind: `darkMode: 'class'`
-- CSS vars di `src/index.css` — `:root` (light) & `.dark` (dark) + `transition 300ms`
+- CSS vars di `src/index.css` — `:root` (light) & `.dark` (dark)
 - Toggle di `Navbar.jsx` — `Sun` saat dark, `Moon` saat light
+- Light-mode accent text pakai `text-lime-deep` agar kontras, dark-mode pakai `text-lime`
 
 ## 📁 Structure
 
 ```
 src/
-├── assets/
 ├── components/
 │   ├── layout/ (Navbar, Footer, BackgroundGrid)
 │   ├── sections/ (Hero, OperationalLogs, DeployedSystems, TechStack, Contact)
-│   └── ui/ (Card, StatusBadge, TerminalText)
+│   └── ui/ (Card, StatusBadge, SectionHeading, ErrorBoundary)
 ├── data/portfolioData.js
-├── hooks/ (useTheme, useScrollSpy)
+├── hooks/ (useTheme)
 ├── App.jsx
 └── index.css
 ```
+
+Catatan: `public/icons.svg` dan `src/assets/` (hero.png, react.svg, vite.svg) tidak dipakai komponen mana pun.
 
 ## 🔗 Live Projects
 

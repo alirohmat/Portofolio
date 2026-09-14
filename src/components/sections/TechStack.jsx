@@ -25,7 +25,7 @@ export default function TechStack() {
                 <div key={skill.name}>
                   <div className="mb-2 flex items-center justify-between">
                     <span className="text-sm font-semibold">
-                      <span className="mr-2 font-mono text-[11px] text-lime-dim dark:text-lime">
+                      <span className="mr-2 font-mono text-[11px] text-lime-deep dark:text-lime">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       {skill.name}

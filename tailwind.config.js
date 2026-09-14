@@ -15,6 +15,7 @@ export default {
         lime: {
           DEFAULT: '#C8F04B',
           dim: '#A3CC2E',
+          deep: '#3F6212',
           ink: '#1A2200',
         },
         primary: '#0A0C0A',

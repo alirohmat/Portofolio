@@ -49,7 +49,7 @@ export default function Navbar() {
                 href={link.href}
                 className="group rounded-lg px-3 py-2 font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)]"
               >
-                <span className="mr-1 text-[10px] text-lime-dim dark:text-lime">{link.index}</span>
+                <span className="mr-1 text-[10px] text-lime-deep dark:text-lime">{link.index}</span>
                 {link.label}
               </a>
             ))}
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-lime-dim md:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-lime-deep dark:hover:text-lime md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
@@ -101,7 +101,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="rounded-xl px-4 py-3 font-mono text-[15px] transition-colors hover:bg-[var(--accent-soft)]"
                 >
-                  <span className="mr-2 text-xs text-lime-dim dark:text-lime">{link.index}</span>
+                  <span className="mr-2 text-xs text-lime-deep dark:text-lime">{link.index}</span>
                   {link.label}
                 </a>
               ))}

@@ -5,7 +5,7 @@ export default function StatusBadge({ status }) {
   const isDeployed = status === 'DEPLOYED';
 
   const badgeClass = isLive
-    ? 'border-lime/40 bg-lime/10 text-lime'
+    ? 'border-lime-deep/30 bg-lime/15 text-lime-deep dark:border-lime/40 dark:bg-lime/10 dark:text-lime'
     : isDeployed
       ? 'border-[var(--border-color)] bg-[var(--accent-soft)] text-[var(--text-primary)]'
       : 'border-[var(--border-color)] text-[var(--text-muted)]';
