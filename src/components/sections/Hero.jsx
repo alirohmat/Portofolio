@@ -26,13 +26,13 @@ export default function Hero() {
             href="#contact"
             className="w-full sm:w-auto rounded-lg bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition shadow-sm"
           >
-            Connect
+            Hubungi Saya
           </a>
           <a
             href="#systems"
             className="w-full sm:w-auto rounded-lg border border-slate-300 px-8 py-3 font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 transition"
           >
-            View Projects
+            Lihat Proyek
           </a>
         </div>
       </motion.div>

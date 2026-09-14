@@ -14,8 +14,8 @@ export default function OperationalLogs() {
   return (
     <section id="logs" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Professional Experience</h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">A summary of my operational roles and technical implementations, demonstrating consistent growth and high attention to detail.</p>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Pengalaman Profesional</h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">Ringkasan peran operasional dan implementasi teknis saya, menunjukkan pertumbuhan konsisten dan perhatian tinggi terhadap detail.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {operationalLogs.map((log, index) => {
             const Icon = logIcons[log.type] || ClipboardList;

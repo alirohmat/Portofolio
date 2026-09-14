@@ -9,8 +9,8 @@ export default function DeployedSystems() {
   return (
     <section id="systems" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Projects & Deployments</h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">A showcase of systems I have successfully implemented and deployed into production environments.</p>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Proyek & Implementasi</h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl">Kumpulan sistem yang berhasil saya implementasikan dan jalankan di lingkungan produksi.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {deployedSystems.map((item, index) => (

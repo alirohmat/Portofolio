@@ -7,8 +7,8 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center">Get in Touch</h2>
-        <p className="text-center text-slate-600 dark:text-slate-400 mb-10">Feel free to reach out for professional collaborations or inquiries.</p>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center">Hubungi Saya</h2>
+        <p className="text-center text-slate-600 dark:text-slate-400 mb-10">Silakan hubungi saya untuk kolaborasi profesional atau pertanyaan lebih lanjut.</p>
 
         <div className="max-w-2xl mx-auto">
           <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 sm:p-10 shadow-sm">
@@ -42,7 +42,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-sm"
               >
-                Connect on WhatsApp
+                Hubungi via WhatsApp
               </a>
             </div>
           </div>

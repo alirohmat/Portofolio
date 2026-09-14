@@ -6,12 +6,12 @@ export default function TechStack() {
   return (
     <section id="skills" className="py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Technical Skills & Expertise</h2>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Keahlian Teknis</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           {/* Hard Modules */}
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Core Competencies</h3>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Kompetensi Inti</h3>
 
             {techSkills.map((skill) => (
               <div key={skill.name} className="mb-5">
@@ -33,7 +33,7 @@ export default function TechStack() {
 
           {/* Soft Protocols */}
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Professional Soft Skills</h3>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Soft Skills Profesional</h3>
 
             <div className="grid grid-cols-2 gap-4">
               {softSkills.map((skill) => (
