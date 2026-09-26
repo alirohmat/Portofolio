@@ -65,7 +65,7 @@ export default function Footer() {
               <MessageCircle size={16} /> WhatsApp
             </a>
             <a
-              href="#deployed-systems"
+              href="#systems"
               className="flex h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)] font-semibold text-[var(--text-primary)] active:scale-95"
             >
               <Briefcase size={16} /> Proyek

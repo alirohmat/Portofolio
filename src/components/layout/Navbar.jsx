@@ -26,6 +26,15 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen]);
+
   const navLinks = [
     { label: 'Logs', href: '#logs', index: '01' },
     { label: 'Systems', href: '#systems', index: '02' },
@@ -34,6 +43,7 @@ export default function Navbar() {
   ];
 
   return (
+    <>
     <nav
       className={`fixed top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-300 ${
         scrolled
@@ -86,13 +96,14 @@ export default function Navbar() {
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] transition-colors hover:text-[var(--accent)] md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? 'Tutup menu' : 'Buka menu'}
             aria-expanded={isOpen}
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
+    </nav>
 
       <AnimatePresence>
         {isOpen && (
@@ -137,6 +148,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }
