@@ -8,7 +8,7 @@ const iconMap = { Target, ShieldCheck, Mic, Users, Smile, Clock };
 
 export default function TechStack() {
   return (
-    <section id="skills" className="scroll-mt-20 py-20 sm:py-24">
+    <section id="skills" className="section-pad scroll-mt-20">
       <div className="container-shell">
         <SectionHeading
           index="03"
@@ -24,7 +24,7 @@ export default function TechStack() {
               {techSkills.map((skill, i) => (
                 <div key={skill.name}>
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-sm font-semibold">
+                    <span className="text-[13px] font-semibold">
                       <span className="mr-2 font-mono text-[11px] text-lime-deep dark:text-lime">
                         {String(i + 1).padStart(2, '0')}
                       </span>
@@ -34,7 +34,7 @@ export default function TechStack() {
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="h-2.5 overflow-hidden rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)]">
+                  <div className="h-2 overflow-hidden rounded-full bg-[var(--bg-primary)] border border-[var(--border-color)]">
                     <motion.div
                       className="h-full rounded-full bg-gradient-to-r from-lime-dim to-lime"
                       initial={{ width: 0 }}
@@ -47,7 +47,7 @@ export default function TechStack() {
               ))}
             </div>
 
-            <div className="mt-8 grid gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-primary)] p-4 sm:grid-cols-2">
+            <div className="mt-8 grid grid-cols-1 gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-primary)] p-4 sm:grid-cols-2">
               <div className="flex items-start gap-3">
                 <span className="rounded-lg bg-lime p-2 text-lime-ink"><GraduationCap size={17} /></span>
                 <div>
@@ -67,7 +67,7 @@ export default function TechStack() {
 
           <div>
             <p className="mono-label opacity-60">soft_protocols[]</p>
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-2">
               {softSkills.map((skill, i) => {
                 const Icon = iconMap[skill.icon] || Target;
                 return (
@@ -80,7 +80,7 @@ export default function TechStack() {
                     className="card-line group rounded-2xl p-4 transition-all hover:-translate-y-0.5 dark:hover:border-lime/40"
                   >
                     <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-lime text-lime-ink transition-transform group-hover:scale-110">
-                      <Icon size={17} />
+                      <Icon size={16} />
                     </div>
                     <p className="mt-3 text-sm font-bold">{skill.name}</p>
                     <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">{skill.desc}</p>

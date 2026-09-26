@@ -7,7 +7,7 @@ import SectionHeading from '../ui/SectionHeading';
 
 export default function DeployedSystems() {
   return (
-    <section id="systems" className="scroll-mt-20 py-20 sm:py-24">
+    <section id="systems" className="section-pad scroll-mt-20">
       <div className="container-shell">
         <SectionHeading
           index="02"
@@ -24,10 +24,10 @@ export default function DeployedSystems() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
-              className="card-line group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:hover:border-lime/40 sm:p-7"
+              className="card-line group relative flex flex-col overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:hover:border-lime/40 sm:p-7"
             >
               <div
-                className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="hidden sm:block pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{ background: 'radial-gradient(closest-side, rgba(200,240,75,0.18), transparent)' }}
               />
               <div className="flex items-start justify-between gap-3">
@@ -37,7 +37,7 @@ export default function DeployedSystems() {
                 </span>
               </div>
 
-              <h3 className="mt-4 font-display text-2xl font-bold tracking-tight">{item.name}</h3>
+              <h3 className="mt-4 font-display text-xl sm:text-2xl font-bold tracking-tight">{item.name}</h3>
               <p className="mono-label mt-1 opacity-60">{item.role}</p>
 
               {item.url ? (
@@ -45,12 +45,12 @@ export default function DeployedSystems() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-[var(--accent-soft)] px-3 py-1.5 font-mono text-[13px] font-bold text-lime-deep transition-transform hover:scale-[1.02] dark:text-lime"
+                  className="mt-3 flex w-full sm:w-fit min-h-[44px] items-center justify-center gap-1.5 rounded-lg bg-[var(--accent-soft)] px-3 py-2 font-mono text-[13px] font-bold text-lime-deep transition-transform hover:scale-[1.02] dark:text-lime"
                 >
                   {item.displayUrl} <ArrowUpRight size={14} />
                 </a>
               ) : (
-                <span className="mt-3 w-fit rounded-lg border border-[var(--border-color)] px-3 py-1.5 font-mono text-[13px] opacity-70">
+                <span className="mt-3 flex w-full sm:w-fit min-h-[44px] items-center justify-center rounded-lg border border-[var(--border-color)] px-3 py-2 font-mono text-[13px] opacity-70">
                   {item.displayUrl}
                 </span>
               )}
