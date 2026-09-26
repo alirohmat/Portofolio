@@ -13,9 +13,15 @@ function App() {
   return (
     <ErrorBoundary>
       <div id="top" className="min-h-screen pb-20 sm:pb-0">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-lg focus:bg-lime focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-bold focus:text-lime-ink"
+        >
+          Skip to main content
+        </a>
         <BackgroundGrid />
         <Navbar />
-        <main className="relative">
+        <main id="main-content" className="relative">
           <Hero />
           <div className="container-shell">
             <div className="h-px bg-[var(--border-color)]" />
