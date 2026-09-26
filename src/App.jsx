@@ -12,7 +12,7 @@ import ErrorBoundary from './components/ui/ErrorBoundary';
 function App() {
   return (
     <ErrorBoundary>
-      <div id="top" className="min-h-screen">
+      <div id="top" className="min-h-screen pb-20 sm:pb-0">
         <BackgroundGrid />
         <Navbar />
         <main className="relative">
