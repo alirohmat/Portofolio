@@ -15,6 +15,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { label: 'Logs', href: '#logs', index: '01' },
     { label: 'Systems', href: '#systems', index: '02' },
@@ -30,9 +41,9 @@ export default function Navbar() {
           : 'border-transparent bg-[var(--bg-primary)]/60'
       }`}
     >
-      <div className="container-shell flex h-16 items-center justify-between">
+      <div className="container-shell flex h-14 items-center justify-between md:h-16">
         <a href="#top" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime font-mono text-sm font-bold text-lime-ink shadow-glow">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--accent)] font-mono text-sm font-bold text-lime-ink shadow-glow">
             <Terminal size={16} strokeWidth={2.5} />
           </span>
           <span className="flex flex-col leading-none">
@@ -49,7 +60,7 @@ export default function Navbar() {
                 href={link.href}
                 className="group rounded-lg px-3 py-2 font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)]"
               >
-                <span className="mr-1 text-[10px] text-lime-deep dark:text-lime">{link.index}</span>
+                <span className="mr-1 text-[10px] text-[var(--accent)]">{link.index}</span>
                 {link.label}
               </a>
             ))}
@@ -57,7 +68,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="mr-1 hidden rounded-full bg-lime px-4 py-2 text-[13px] font-bold text-lime-ink transition-transform hover:scale-[1.03] active:scale-95 md:inline-flex"
+            className="mr-1 hidden rounded-full bg-[var(--accent)] px-4 py-2 text-[13px] font-bold text-lime-ink transition-transform hover:scale-[1.03] active:scale-95 md:inline-flex"
           >
             Hire Me
           </a>
@@ -66,54 +77,64 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-color)] bg-[var(--bg-surface)] transition-all hover:border-lime/60"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-color)] bg-[var(--bg-surface)] transition-all hover:border-[var(--accent)]/60"
           >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-lime-deep dark:hover:text-lime md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] transition-colors hover:text-[var(--accent)] md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="absolute left-0 top-16 w-full border-b border-[var(--border-color)] bg-[var(--bg-primary)]/95 shadow-card backdrop-blur-xl md:hidden"
-          >
-            <div className="flex flex-col gap-1 px-4 py-4">
-              {navLinks.map((link) => (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
+            />
+            <motion.div
+              key="mobile-bottom-sheet"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl border-t border-[var(--border-color)] bg-[var(--bg-primary)] p-6 shadow-2xl backdrop-blur-xl md:hidden"
+            >
+              <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-[var(--border-color)]" />
+              <div className="flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex h-12 items-center rounded-xl px-4 font-mono text-[16px] transition-colors hover:bg-[var(--accent-soft)]"
+                  >
+                    <span className="mr-3 text-xs text-[var(--accent)]">{link.index}</span>
+                    {link.label}
+                  </a>
+                ))}
                 <a
-                  key={link.label}
-                  href={link.href}
+                  href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-xl px-4 py-3 font-mono text-[15px] transition-colors hover:bg-[var(--accent-soft)]"
+                  className="mt-2 flex h-12 items-center justify-center rounded-xl bg-[var(--accent)] font-bold text-lime-ink"
                 >
-                  <span className="mr-2 text-xs text-lime-deep dark:text-lime">{link.index}</span>
-                  {link.label}
+                  Hire Me
                 </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 rounded-xl bg-lime px-4 py-3 text-center font-bold text-lime-ink"
-              >
-                Hire Me
-              </a>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
