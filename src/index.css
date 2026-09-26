@@ -10,6 +10,10 @@
   --border-color: #d9ddd0;
   --accent: #4d7c0f;
   --accent-soft: #ecfccb;
+  --tap: 44px;
+  --font-h1: clamp(2.25rem, 8vw, 4.5rem);
+  --font-h2: clamp(1.5rem, 5vw, 2.25rem);
+  --section-spacing: 3.5rem;
 }
 
 .dark {
@@ -29,6 +33,7 @@
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   html {
@@ -47,11 +52,19 @@
     background: #c8f04b;
     color: #1a2200;
   }
+
+  h1 {
+    font-size: var(--font-h1);
+  }
+
+  h2 {
+    font-size: var(--font-h2);
+  }
 }
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full max-w-6xl px-4 md:px-6;
+    @apply mx-auto w-full max-w-6xl px-5;
   }
 
   .mono-label {
@@ -61,6 +74,25 @@
   .card-line {
     border: 1px solid var(--border-color);
     background: var(--bg-surface);
+  }
+
+  .section-pad {
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --section-spacing: 5rem;
+    }
+  }
+
+  .tap {
+    min-height: var(--tap);
+    min-width: var(--tap);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .text-balance {
